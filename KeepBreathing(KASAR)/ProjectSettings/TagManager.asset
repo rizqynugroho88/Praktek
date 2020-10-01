@@ -9,6 +9,9 @@ TagManager:
   - pill
   - oxy
   - ene
+  - health
+  - stamina
+  - mask
   layers:
   - Default
   - TransparentFX

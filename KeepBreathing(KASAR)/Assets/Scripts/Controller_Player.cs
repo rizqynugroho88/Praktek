@@ -13,9 +13,9 @@ public class Controller_Player : MonoBehaviour
 
 	public bool isJump;
 
-	public Slider HP;
-	public Slider Oxygen;
-	public Slider Energy;
+	public Slider Mask;
+	public Slider Health;
+	public Slider Stamina;
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +66,9 @@ public class Controller_Player : MonoBehaviour
 			isJump = true;
 			//Debug.Log(collision.gameObject);
 
-			HP.value -= Time.deltaTime * 0.5f;
-			Oxygen.value -= Time.deltaTime * 0.5f;
-			Energy.value -= Time.deltaTime * 0.1f;
+			Mask.value -= Time.deltaTime * 0.5f;
+			Health.value -= Time.deltaTime * 0.5f;
+			Stamina.value -= Time.deltaTime * 0.1f;
 
 			//Debug.Log(HP.value);
 		}
@@ -79,25 +79,25 @@ public class Controller_Player : MonoBehaviour
 			//Debug.Log(HP.value);
 		}
 
-		if (collision.gameObject.CompareTag("pill")){
+		if (collision.gameObject.CompareTag("mask")){
 
-			HP.value = 10f;
+			Mask.value = 10f;
 
 			Destroy (collision.gameObject);
 			
 		}
 
-		if (collision.gameObject.CompareTag("oxy")){
+		if (collision.gameObject.CompareTag("health")){
 
-			Oxygen.value = 10f;
+			Health.value = 10f;
 			
 			Destroy (collision.gameObject);
 			
 		}
 
-		if (collision.gameObject.CompareTag("ene")){
+		if (collision.gameObject.CompareTag("stamina")){
 
-			Energy.value = 10f;
+			Stamina.value = 10f;
 			
 			Destroy (collision.gameObject);
 			
